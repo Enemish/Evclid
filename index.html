@@ -5,15 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Евклид</title>
     <link rel="stylesheet" href="/css/normalise.css">
-    <!-- <link rel="stylesheet" href="/css/bootstrap-grid.min.css"> -->
     <link rel="stylesheet" href="/css/style.css">
+		
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+		$( function() {
+			$( "#accordion" ).accordion({
+				heightStyle: "content"
+			});
+		} );
+		</script>
+
 </head>
 <body>
 	<!--HEADER-->
+	<div class="shadow-menu" id="shadow-menu"></div>	
 	<header class="header super-container">
 		<div class="container header-container">
-			<div class="header-link-burger">
-				<a href="#" class="link-burger"></a>
+			<button class="btn header-link-burger" id="header-link-burger">
+			</button>
+			<div class="nav-menu" id="nav-menu">
+				<nav class="header-nav nav-burger-menu ">
+					<ul class="nav-list">
+						<li class="nav-item">
+							<a href="#" class="nav-link">О нас</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Проекты</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Этапы</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Отзывы</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Контакты</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 			<div class="header-link-logo">
 				<a href="#" class="link-logo">
@@ -41,26 +78,37 @@
 				</nav>
 			<button class="btn header-search-btn"></button>
 		</div>
+		<script src="/js/burger.js"></script>
 	</header>
 	<main class="main">
 		<!--BIG SLIDER-->
 		<section class="big-slider super-container">
-			<div class="container container-slider">
-				<h1 class="project-solutions">
-					Проектные решения любой сложности
-				</h1>
-				<p class="project-discription">
-					Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
-				</p>
-				<a href="#" class="order-calculation-btn">
-					Заказать расчёт
-				</a>
-				<div class="p-s-box-point">
-					<a href="#" class="box-point point1"></a>
-					<a href="#" class="box-point point2"></a>
-					<a href="#" class="box-point point3"></a>
+			<div class="container container-slider ">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">	
+						<div class="swiper-slide swiper-slide1"></div>
+						<div class="swiper-slide swiper-slide2"></div>
+						<div class="swiper-slide swiper-slide3"></div>
+					</div>
 				</div>
+				<div class="swiper-pagination"></div>
+				<div class="project-box">
+					<h1 class="project-solutions">
+						Проектные решения любой сложности
+					</h1>
+					<p class="project-discription">
+						Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
+					</p>
+					<a href="#" class="order-calculation-btn">
+						Заказать расчёт
+					</a>
+				</div>	
 			</div>
+			<script type="module">
+				import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+				const swiper = new Swiper()
+			</script>
+			<script src="/js/swiper.js"></script>	
 		</section>
 		<!--ABOUT US-->
 		<section class="about-us super-container">
@@ -115,12 +163,12 @@
 			<div class="how-we-work-container">
 				<h2 class="hww-h2">Как мы работаем</h2>
 				<div class="hww-box-steps">
-					<a href="#" class="hww-box-step step1">1 шаг</a>
-					<a href="#" class="hww-box-step step2">2 шаг</a>
-					<a href="#" class="hww-box-step step3">3 шаг</a>
-					<a href="#" class="hww-box-step step4">4 шаг</a>
+					<button class="btn hww-box-step step1" data-path="one">1 шаг</button>
+					<button class="btn hww-box-step step2" data-path="two">2 шаг</button>
+					<button class="btn hww-box-step step3" data-path="three">3 шаг</button>
+					<button class="btn hww-box-step step4" data-path="four">4 шаг</button>
 				</div>
-				<div class="hww-box-discription-img">
+				<div class="tab-content tab-content-active" data-target="one">
 					<div class="hww-box-discription">
 						<h3 class="hww-h3">Проводим консультацию</h3>
 						<p class="hww-discription">
@@ -141,55 +189,179 @@
 						<a href="#" class="btn box-discription-btn2 ">Договор</a>
 					</div>
 				</div>
+				<div class="tab-content" data-target="two">
+					<div class="hww-box-discription">
+						<h3 class="hww-h3">Составляем смету</h3>
+						<p class="hww-discription">
+							Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+					<div class="hww-box-img hww-box-img-tab-two"></div>
+					<div class="hww-box-discription_768px">
+						<h3 class="hww-h3">Составляем смету</h3>
+						<p class="hww-discription">
+							Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+				</div>
+				<div class="tab-content" data-target="three">
+					<div class="hww-box-discription">
+						<h3 class="hww-h3">Привлекаем подрядчиков</h3>
+						<p class="hww-discription">
+							Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+					<div class="hww-box-img hww-box-img-tab-three"></div>
+					<div class="hww-box-discription_768px">
+						<h3 class="hww-h3">Привлекаем подрядчиков</h3>
+						<p class="hww-discription">
+							Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+				</div>
+				<div class="tab-content" data-target="four">
+					<div class="hww-box-discription">
+						<h3 class="hww-h3">Инспектируем все этапы работ</h3>
+						<p class="hww-discription">
+							Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+					<div class="hww-box-img hww-box-img-tab-four"></div>
+					<div class="hww-box-discription_768px">
+						<h3 class="hww-h3">Проводим консультацию</h3>
+						<p class="hww-discription">
+							Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
+						</p>
+						<a href="#" class="btn box-discription-btn1 ">Подробнее</a>
+						<a href="#" class="btn box-discription-btn2 ">Договор</a>
+					</div>
+				</div>
 			</div>
+			<script src="/js/tabs.js"></script>
 		</section>
 		<!-- Asked-questions -->
 		<section class="asked-questions super-container">
 			<div class="questions-container">
 				<h3 class="questions-table-h3">Часто задаваемые вопросы</h3>
-				<ul class="questions-table">	
+				<ul class="questions-table" id="accordion">	
 					<li class="q-i2">
-						<a href="#" class="question-link">
-							<span class="question-item-text q-i-t-768 q-i-t-320">
-								Могу ли я вернуть деньги на каком-либо из этапов работ?
-							</span>
-							<div class="question-item-icon q-i-i_768"></div>
-						</a>
+						<div class="question-link">
+							<div class="question-box">
+								<h3 class="question-item-text q-i-t-768 q-i-t-320">
+									Могу ли я вернуть деньги на каком-либо из этапов работ?
+								</h3>
+								<div class="question-item-icon q-i-i_768"></div>
+							</div>
+						</div>
+						<div class="question-item-content-box">
+							<p class="question-item-content">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+							</p>
+						</div>
 					</li>
 					<li class="q-i2">
-						<a href="#" class="question-link">
-							<span class="question-item-text q-i-t-1024 q-i-t-768 q-i-t-320">
-								Могу ли я делегировать вам работу / согласование с подрядчиком / организацией? 
-							</span>
-							<div class="question-item-icon q-i-i-320"></div>
-						</a>
+						<div class="question-link">
+							<div class="question-box">
+								<h3 class="question-item-text q-i-t-1024 q-i-t-768 q-i-t-320">
+									Могу ли я делегировать вам работу / согласование с подрядчиком / организацией? 
+								</h3>
+								<div class="question-item-icon q-i-i-320"></div>
+							</div>
+						</div>
+						<div class="question-item-content-box">
+							<p class="question-item-content">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+							</p>
+						</div>
 					</li>
 					<li class="q-i2">
-						<a href="#" class="question-link">
-							<span class="question-item-text q-i-t-768">
-								Я выбираю между разными компаниями. В чём ваше отличие?
-							</span>
-							<div class="question-item-icon q-i-i_768 q-i-i-320"></div>
-						</a>
+						<div class="question-link">
+							<div class="question-box">
+								<h3 class="question-item-text q-i-t-768">
+									Я выбираю между разными компаниями. В чём ваше отличие?
+								</h3>
+								<div class="question-item-icon q-i-i_768 q-i-i-320"></div>
+							</div>
+						</div>
+						<div class="question-item-content-box">
+							<p class="question-item-content">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+							</p>
+						</div>
 					</li>
 					<li class="q-i2">
-						<a href="#" class="question-link">
-							<span class="question-item-text q-i-t-1024 q-i-t-768">
-								У меня есть свой проект. Сможем ли мы его доработать / реализовать?
-							</span>
-							<div class="question-item-icon q-i-i-320"></div>
-						</a>
+						<div class="question-link">
+							<div class="question-box">
+								<h3 class="question-item-text q-i-t-1024 q-i-t-768">
+									У меня есть свой проект. Сможем ли мы его доработать / реализовать?
+								</h3>
+								<div class="question-item-icon q-i-i-320"></div>
+							</div>
+						</div>
+						<div class="question-item-content-box">
+							<p class="question-item-content">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Non pariatur aut expedita tenetur illo amet excepturi neque assumenda. Velit voluptatum et neque soluta dolor quidem cumque veritatis facilis error illo?
+							</p>
+						</div>
 					</li>
 					<li class="q-i1">
-						<a href="#" class="question-link">
-							<span class="question-item-text">
-								Из чего формируется конечная стоимость проекта?
-							</span>
-							<div class="question-item-icon"></div>
-						</a>
+						<div class="question-link">
+							<div class="question-box">
+								<h3 class="question-item-text">
+									Из чего формируется конечная стоимость проекта?
+								</h3>
+								<div class="question-item-icon q-i-i-320"></div>
+							</div>
+						</div>
+						<div class="question-item-content-box">
+							<p class="question-item-content">
+								Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов.
+							</p>
+							<br><br>
+							<p class="question-item-content">
+								Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете. 
+							</p>
+						</div>
 					</li>
 				</ul>
 			</div>
+			<script src="/js/accordion.js"></script>	
 		</section>
 		<!-- FOOTER -->
 		<footer class="footer super-container">

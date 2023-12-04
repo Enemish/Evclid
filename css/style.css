@@ -47,6 +47,7 @@
 --color10: #ececec;
 --color11: #222;
 --color12: #414141;
+--color13: rgba(0, 0, 0, 0);
 }
 * {
 	box-sizing: border-box;
@@ -57,10 +58,14 @@ html {
 	font-family: 'Montserrat', sans-serif;
 }
 body {
+	position: relative;
+	width: 100%;
+	height: 100%;
 	background-color: var(--color2);
 }
 .super-container {
 	min-width: 1920px;
+	margin: 0 auto;
 }
 .container {
 	display: flex;
@@ -73,6 +78,10 @@ a {
 	text-decoration: none;
 	outline: none;
 	transition: 0.3s;
+	-webkit-tap-highlight-color: rgba(255, 153, 0, 0.5);
+}
+button {
+	-webkit-tap-highlight-color: var(--color13);
 }
 ul {
 	margin: 0;
@@ -90,6 +99,7 @@ input {
 	outline: none;
 	border: none;
 	transition: 0.3s ease-in-out;
+	-webkit-tap-highlight-color: var(--color13);
 } 
 h1,h2,h3 {
 	margin: 0;
@@ -103,6 +113,7 @@ p {
 }	
 /* Header */
 .header {
+	position: relative;
 	background-color: var(--color2);
 	box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
 }
@@ -110,11 +121,34 @@ p {
 	display: none;
 }
 .header-link-burger {
+	position: absolute;
 	display: none;
-	width: 30px;
-	height: 23px;
+	width: 40px;
+	height: 33px;
+	background-color: var(--color13);
 	background-image: url(/img/Burger.svg);
-	transition: 0.3s ease-in-out;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transition: 0.3s;
+}
+.nav-menu {
+	position: absolute;
+	z-index: 9;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: var(--color11);
+	transition: 0.5s;
+	transform: translateY(-100%);
+}
+.nav-menu-active {
+	display: none;
+	transform: translateY(0%);
+}
+.nav-burger-menu {
+	display: none;
 }
 .header-link-logo {
 	display: inline-block;
@@ -129,33 +163,34 @@ p {
 }
 .header-nav {
 	display: inline-block;
-	margin: 42px 71px 0 0;
+	margin: auto 71px auto 0;
 }
 .nav-item {
 	display: inline-block;
-	margin-bottom: 37px;
 }
 .nav-item:not(:last-child) {
 	margin-right: 82px;
 }
-
 .nav-link {
 	display: inline;
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 21.94px;
 	color: var(--color3);
-	border-bottom: 0 solid;
 }
 .nav-link:hover {
-	padding-bottom: 10px;
+	padding-bottom: 7px;
 	border-bottom: 2px solid var(--color4);
 	transition: 0.3s ease-in-out;
 }
 .nav-link:focus {
-	padding-bottom: 10px;
-	border-bottom: 2px solid var(--color5);
+	padding-bottom: 7px;
+	border-bottom: 2px solid var(--color4);
+	color: var(--color4);
+}
+.nav-link:active {
 	color: var(--color5);
+	border-bottom: 2px solid var(--color5);
 }
 .header-search-btn {
 	width: 25.17px;
@@ -180,35 +215,73 @@ p {
 	margin-bottom: 100px;
 }
 .container-slider {
+	position: relative;
 	flex-wrap: wrap;
 	flex-direction: column;
 	width: 1770px;
 	height: 620px;
-	background-image: url(/img/low-angle-photo-of-balconies-1920.jpg);
+	transition: 0.5s ease-in-out;
+}
+.swiper-container {
+	width: 1770px;
+	height: 620px;
+}
+.swiper-slide1,.swiper-slide2,.swiper-slide3 {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
-	transition: 0.5s ease-in-out;
+}
+.swiper-slide1 {
+	background-image: url(/img/low-angle-photo-of-balconies-1920.jpg);
+}
+.swiper-slide2 {
+	background-image: url(/img/brown-and-blue-glass-building_1920.jpg);	
+}
+.swiper-slide3 {
+	background-image: url(/img/apartment-apartment-building-architecture-building_1920.jpg);
+}
+.swiper-pagination {
+	left: 843px;
+	bottom: 30px;
+	width: 85px;
+	height: 15px;
+}
+.swiper-pagination .swiper-pagination-bullet {
+	width: 15px;
+	height: 15px;
+	background-color: var(--color2);
+}
+.swiper-pagination .swiper-pagination-bullet:not(:last-child) {
+	margin-right: 15px;
+}
+.project-box {
+	position: absolute;
+	top: 105px;
+	left: 80px;
+	display: inline-block;
+	width: 837px;
+	z-index: 2;
 }
 .project-solutions {
 	display: inline-block;
-	margin: 103px 800px 21px 78px;
+	margin-bottom: 20px;
 	font-weight: 800;
-	font-size: 70.37px;
-	line-height: 87.79px;
+	font-size: 70px;
+	line-height: 85.33px;
 	color: var(--color2);
 }
 .project-discription {
 	display: inline-block;
-	margin: 0 855px 97px 78px;
+	margin-bottom: 96px;
 	font-weight: 700;
-	font-size: 23.46px;
-	line-height: 28.6px;
+	font-size: 24px;
+	line-height: 29px;
+	letter-spacing: -0.33px;
 	color: var(--color2);
 }
 .order-calculation-btn {
 	display: block;
-	margin: 0 0 0 81px;
+	margin: 0;
 	padding: 25.83px 35.14px;
 	max-width: 280.53px;
 	font-weight: 700;
@@ -222,25 +295,6 @@ p {
 }
 .order-calculation-btn:active {
 	background-color: var(--color5);
-}
-.p-s-box-point {
-	display: none;
-}
-.box-point {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-	background-color: rgba(255, 255, 255, 0.4);
-	border-radius: 50%;
-}
-.box-point:not(:last-child) {
-	margin-right: 16px;
-}
-.box-point:active {
-	border: 1px solid var(--color2);
-}
-.point1 {
-	background-color: var(--color2);
 }
 /* About-Us */
 .about-us {
@@ -375,7 +429,7 @@ p {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	max-width: 1774px;
+	width: 1772px;
 	margin: auto;
 }
 .hww-h2 {
@@ -396,27 +450,29 @@ p {
 	font-size: 18px;
 	line-height: 22px;
 	color: var(--color3);
+	background-color: var(--color2);
+	transition: none;
+	-webkit-tap-highlight-color: rgba(255, 153, 0, 0.5);
 }
 .hww-box-step:hover {
 	color: var(--color4);
 }
-.hww-box-step:active {
+.hww-box-step:focus {
 	color: var(--color5);
-}
-.step1 {
-	color: var(--color4);
 }
 .step1,.step2,.step3 {
 	margin-right: 85px;
 }
-.hww-box-discription-img {
-	display: flex;
+.tab-content {
+	display: none;
 	flex-wrap: wrap;
+}	
+.tab-content-active {
+	display: flex;
 }
 .hww-box-discription {
 	display: inline-block;
 	max-width: 758px;
-	margin-left: 3px;
 	margin-right: 142px;
 }
 .hww-h3 {
@@ -472,11 +528,20 @@ p {
 	display: inline-block;
 	margin-top: 10px;
 	width: 870px;
-	height: 465px;
+	height: 460px;
 	letter-spacing: 0;
 	background-image: url(/img/Rectangle_1920.jpg);
 	background-repeat: no-repeat;
 }
+.hww-box-img-tab-two {
+	background-image: url(/img/Rectangle_1920_tab_two.jpg);
+} 
+.hww-box-img-tab-three {
+	background-image: url(/img/Rectangle_1920_tab_three.jpg);
+} 
+.hww-box-img-tab-four {
+	background-image: url(/img/Rectangle_1920_tab_four.jpg);
+} 
 .hww-box-discription_768px {
 	display: none;
 }
@@ -486,9 +551,10 @@ p {
 }
 .questions-container {
 	display: flex;
-	width: 1766px;
+	flex-direction: column;
+	width: 1770px;
 	margin: auto;
-  flex-direction: column;
+	transition: 0.3s;
 }
 .questions-table-h3 {
   display: block;
@@ -503,33 +569,40 @@ p {
 	width: 100%;
 }
 .q-i1 {
-	margin-left: 4px;
 	border-top: solid 1px var(--color6);
 	border-bottom: solid 1px var(--color6);
-	transition: 0.3s ease-in-out;
+	transition: 0.3s;
+	-webkit-tap-highlight-color: var(--color13);
 }
 .q-i1:hover {
 	border-top: solid 1px var(--color4);
 	border-bottom: solid 1px var(--color4);
 }
 .q-i2 {
-	margin-left: 4px;
 	border-bottom: solid 1px var(--color6);
-	transition: 0.3s ease-in-out;
+	transition: 0.3s;
+	-webkit-tap-highlight-color: var(--color13);
 }
 .q-i2:hover,
 .q-i2:hover + li {
 	border-bottom: solid 1px var(--color4);
 }
 .question-link{
+	display: block;
+}
+.question-box {
 	display: flex;
 }
-.question-link:hover .question-item-text{
-	color: var(--color4);
+#accordion .ui-accordion-header {
+	margin: 0;
+	padding: 0; 
+	border: 0;
+	background-color: var(--color2);
+	transition: 0.3s;
 }
-.question-link:hover .question-item-icon {
-	background-color: var(--color9);
-} 
+#accordion .ui-icon{
+	display: none;
+}
 .question-item-text {
 	display: inline-block;
 	margin: 39px auto 39px 0;
@@ -537,7 +610,10 @@ p {
 	font-size: 24px;
 	line-height: 35px;
 	color: var(--color3);
-	transition: 0.3s ease-in-out;
+	transition: 0.3s;
+}
+.question-box:hover .question-item-text{
+	color: var(--color4);
 }
 .question-item-icon {
 	display: inline-block;
@@ -549,7 +625,37 @@ p {
 	background-image: url(/img/Rectangle12.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	transition: 0.3s ease-in-out;
+	transition: 0.5s;
+} 
+.question-box:hover .question-item-icon {
+	background-image: url(/img/Rectangle_12_White.png);
+	background-color: var(--color4);
+}
+#accordion .ui-corner-bottom,  
+#accordion .ui-widget-content,
+#accordion .ui-accordion-content-active,
+#accordion .ui-accordion-content {
+	padding: 0;
+	margin-bottom: 40px;
+	border: 0;
+}
+#accordion .ui-accordion-header-active .question-box .question-item-icon {
+  transform: rotate(-45deg);
+}
+#accordion .ui-accordion-header-active .question-box:hover .question-item-icon {
+	background-color: var(--color10);
+	background-image: url(/img/Rectangle12.png);
+}
+#accordion .ui-accordion-header-active .question-box:hover .question-item-text{
+	color: var(--color3);
+}
+.question-item-content-box {
+	width: 56.6%;
+}
+.question-item-content {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 32px;
 }
 /* Footer */
 .footer {
@@ -640,10 +746,10 @@ p {
 	background-color: var(--color4);
 }
 .f-t-btn:hover {
-background-color: rgba(255, 153, 0, 0.6);
+	background-color: rgba(255, 153, 0, 0.6);
 }
 .f-t-btn:active {
-background-color: var(--color5);
+	background-color: var(--color5);
 }
 .agreement {
   margin-top: 14px;
@@ -707,18 +813,49 @@ label:before {
 		width: 924px;
 	}
 	/* Header */
+	.header-nav {
+		display: none;
+	 }
 	.header-link-burger {
-		display: inline;
-		margin: 39px 0 38px 0;
+		z-index: 10;
+		display: inline-block;
+		top: 33%;
+	}
+
+	.header-link-burger-active {
+		background-image: url(/img/Burger_active.svg);
+	}
+	
+	 .nav-menu, .nav-menu-active {
+		display: block;
+	}
+	.nav-burger-menu {
+		display: inline-block;
+		margin: 45px 0 0 177px;
+	}
+	.nav-link {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 21.94px;
+		color: var(--color6);
+	} 
+	.shadow-menu {
+		position: absolute;
+		z-index: 8;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateY(-100%);
+}
+	.shadow-menu-active {
+		transform: translateY(0%);
 	}
 	.header-link-logo {
 		width: 151px;
 		height: 48px;
 		margin: 26px auto;
 	}
-	.header-nav {
-		display: none;
- 	}
  	.header-search-btn {
 		width: 24.17px;
 		height: 25.62px;
@@ -731,27 +868,45 @@ label:before {
 	}
 	.container-slider {
 		height: 668px;
+	}
+	.swiper-container {
+		width: 924px;
+		height: 668px;
+	}
+	.swiper-slide1 {
 		background-image: url(/img/low-angle-photo-of-balconies-1024.jpg);
 	}
+	.swiper-slide2 {
+		background-image: url(/img/brown-and-blue-glass-building_1024.jpg);	
+	}
+	.swiper-slide3 {
+		background-image: url(/img/apartment-apartment-building-architecture-building_1024.jpg);
+	}
+	.swiper-pagination {
+		left: 420px;
+		bottom: 30px;
+		width: 85px;
+		height: 15px;
+	}
+	.project-box {
+		top: 160px;
+		left: 77px;
+		width: 770px;
+	}
 	.project-solutions {
-		margin: 161px auto 10px 46px;
+		margin-bottom: 16px;
 		font-size: 60px;
 		line-height: 73px;
 	}
 	.project-discription {
-		margin: 0 220px 110px 46px;
+		margin-bottom: 60px;
 		font-size: 20px;
 		line-height: 24px;
 	} 
 	.order-calculation-btn {
-		max-width: 286.53px;
-		margin: 0 0 69px 46px;
-		padding: 25.5px 37.14px;
+		max-width: 280px;
+		padding: 25.5px 33.14px;
 	} 
-	.p-s-box-point {
-		display: block;
-		margin: 0 auto 25px auto;
-	}
 	/* About-Us */
 	.about-us {
 		margin-bottom: 59px;
@@ -825,6 +980,15 @@ label:before {
 		height: 689px;
 		background-image: url(/img/Rectangle_1024_2.jpg);
 	}
+	.hww-box-img-tab-two {
+		background-image: url(/img/Rectangle_1024_tab_two.jpg);
+	} 
+	.hww-box-img-tab-three {
+		background-image: url(/img/Rectangle_1024_tab_three.jpg);
+	} 
+	.hww-box-img-tab-four {
+		background-image: url(/img/Rectangle_1024_tab_four.jpg);
+	} 
 	/* Asked Questions */
 	.asked-questions {
 		margin-bottom: 53px;
@@ -841,7 +1005,7 @@ label:before {
 		line-height: 32px;
 	}
 	.q-i-t-1024 {
-		margin: 30px 118px 30px 0;
+		margin: 30px auto 30px 0;
 	}
 	/* Footer */
 	.footer {
@@ -888,14 +1052,20 @@ label:before {
 		margin: 0 auto;
 	}
 	.header-link-burger {
-		width: 30px;
-		height: 23px;
-		margin: 21px 0 23px 0;
+		z-index: 10;
+		display: inline-block;
+		top: 25%;
+	}
+	.nav-burger-menu {
+		margin: 28px 0 0 140px;
+	}
+	.nav-item:not(:last-child) {
+		margin-right: 55px;
 	}
 	.header-link-logo {
 		width: 150px;
 		height: 47.35px;
-		margin: 10px 235px 11px 229px;
+		margin: 10px auto;
 	}
 	.link-logo {
 		width: 100%;
@@ -911,31 +1081,43 @@ label:before {
 	.container-slider {
 		width: 668px;
 		height: 662px;
+	}
+	.swiper-container {
+		width: 668px;
+		height: 662px;
+	}
+	.swiper-slide1 {
 		background-image: url(/img/low-angle-photo-of-balconies-768.jpg);
 	}
+	.swiper-slide2 {
+		background-image: url(/img/brown-and-blue-glass-building_768.jpg);	
+	}
+	.swiper-slide3 {
+		background-image: url(/img/apartment-apartment-building-architecture-building_768.jpg);
+	}
+	.swiper-pagination {
+		left: 292px;
+	}
+	.project-box {
+		top: 160px;
+		left: 40px;
+		width: 588px;
+	}
 	.project-solutions {
-		margin: 160px auto 16px 40px;
-		font-weight: 800;
+		margin-bottom: 16px;
 		font-size: 50px;
 		line-height: 61px;
 	}
 	.project-discription {
-		margin: 0 40px 60px 40px;
+		margin-bottom: 60px;
+		padding-right: 20px;
 		font-size: 18px;
 		line-height: 22px;
 	} 
 	.order-calculation-btn {
-		width: 280px;
-		height: 78px;
-		margin: 0 auto 115px 40px;
-    padding: 24.83px 36.88px;
-		font-size: 23.4581px;
-		line-height: 29px;
+		max-width: 280px;
+		padding: 25.5px 33.14px;	
 	} 
-	.p-s-box-point {
-		display: block;
-		margin: 0 auto 25px auto;
-	}
 	/* About-Us */
 	.about-us {
 		margin-bottom: 60px;
@@ -1024,6 +1206,15 @@ label:before {
 		margin: 0 0 38px 0;
 		background-image: url(/img/Rectangle_768_2.jpg);
 	}
+	.hww-box-img-tab-two {
+		background-image: url(/img/Rectangle_1920_tab_two.jpg);
+	} 
+	.hww-box-img-tab-three {
+		background-image: url(/img/Rectangle_1920_tab_three.jpg);
+	} 
+	.hww-box-img-tab-four {
+		background-image: url(/img/Rectangle_1920_tab_four.jpg);
+	} 
 	.hww-box-discription_768px {
 		display: block;
 	}
@@ -1133,16 +1324,30 @@ label:before {
 		margin: 0 auto;
 	}
 	.header-link-burger {
+		top: 33%;
 		width: 30px;
 		height: 23px;
-		margin: 23px 59.68px 23px 0;
 		background-image: url(/img/Burger_320.svg);
 		background-repeat: no-repeat;
+	}
+	.header-link-burger-active {
+		background-image: url(/img/Burger_active.svg);
+	}
+	.nav-burger-menu {
+		margin: 5px 0 0 70px;
+	}
+	.nav-link {
+		font-weight: 400;
+    font-size: 15px;
+    line-height: 28px;
+	} 
+	.nav-item:not(:last-child) {
+		margin-right: 25px;
 	}
 	.header-link-logo {
 		width: 110px;
 		height: 35px;
-		margin: 17px 66px 14px 0;
+		margin: 17px auto;
 	}
 	.header-search-btn {
 		display: inline-block;
@@ -1156,43 +1361,56 @@ label:before {
 	.container-slider {
 		width: 290px;
 		height: 308px;
+	}
+	.swiper-container {
+		width: 290px;
+		height: 308px;
+	}
+	.swiper-slide1 {
 		background-image: url(/img/low-angle-photo-of-balconie-320.jpg);
 	}
-	.project-solutions {
-		margin: 60px 21px 7px 22px;
-		font-size: 20px;
-		line-height: 24px;
-		text-align: center;
+	.swiper-slide2 {
+		background-image: url(/img/brown-and-blue-glass-building_320.jpg);	
 	}
-	.project-discription {
-		margin: 0 21px 33px 22px;
-		font-size: 12px;
-		font-weight: 700;
-		line-height: 15px;
-		text-align: center;
-	} 
-	.order-calculation-btn {
-		width: 162px;
-		height: 40px;
-		margin: 0 64px 31px 64px;
-    padding: 20px 17px 0px 29px;
-		font-size: 12px;
-		font-weight: 700;
-		line-height: 0;
+	.swiper-slide3 {
+		background-image: url(/img/apartment-apartment-building-architecture-building_320.jpg);
 	}
-	.p-s-box-point {
-		width: 71px;
+	.swiper-pagination {
+		left: 110px;
+		bottom: 15px;
+		width: 70px;
 		height: 10px;
-		margin-bottom: 15px;
-	} 
-	.box-point {
+	}
+	.swiper-pagination .swiper-pagination-bullet {
 		width: 10px;
 		height: 10px;
-		line-height: 0;
-		letter-spacing: 0;
 	}
-	.box-point:not(:last-child) {
-		margin-right: 16px;
+	.swiper-pagination .swiper-pagination-bullet:not(:last-child) {
+		margin-right: 20px;
+	}
+	.project-box {
+		top: 60px;
+		left: 22px;
+		width: 247px;
+	}
+	.project-solutions {
+		margin-bottom: 6px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.project-discription {
+		margin-bottom: 32px;
+		padding: 0 5px;
+		text-align: center;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.order-calculation-btn {
+		width: 162px;
+		margin: 0 auto;
+		padding: 18.571px 28.1419px;
+		font-size: 12px;
+		line-height: 15px;
 	}
 	/* About-Us */
 	.about-us {
@@ -1326,6 +1544,15 @@ label:before {
 		margin:0 0 16px 0;
 		background-image: url(/img/Rectangle_320_2.jpg);
 	}
+	.hww-box-img-tab-two {
+		background-image: url(/img/Rectangle_320_tab_two.jpg);
+	} 
+	.hww-box-img-tab-three {
+		background-image: url(/img/Rectangle_320_tab_three.jpg);
+	} 
+	.hww-box-img-tab-four {
+		background-image: url(/img/Rectangle_320_tab_four.jpg);
+	} 
 	.hww-box-discription_768px {
 		display: block;
 	}
