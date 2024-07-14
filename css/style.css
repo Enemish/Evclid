@@ -215,7 +215,7 @@ p {
 	margin-bottom: 100px;
 }
 .container-slider {
-	overflow: hidden;
+	overflow: hidden !important;
 	position: relative;
 	flex-wrap: wrap;
 	flex-direction: column;
