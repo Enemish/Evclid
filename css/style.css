@@ -867,6 +867,7 @@ label:before {
 		margin-bottom: 60px;
 	}
 	.container-slider {
+		overflow: hidden;
 		height: 668px;
 	}
 	.swiper-container {
