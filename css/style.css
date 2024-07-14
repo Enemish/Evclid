@@ -126,7 +126,7 @@ p {
 	width: 40px;
 	height: 33px;
 	background-color: var(--color13);
-	background-image: url(/img/Burger.svg);
+	background-image: url(../img/Burger.svg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	transition: 0.3s;
@@ -198,16 +198,16 @@ p {
 	margin-top: 40px;
 	border: 0;
 	background-color: var(--color2);
-	background-image: url(/img/Search.svg);
+	background-image: url(../img/Search.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	transition: 0.5s ease-in-out;
 }
 .header-search-btn:hover {
-	background-image: url(/img/Search2.svg);
+	background-image: url(../img/Search2.svg);
 }
 .header-search-btn:focus {
-	background-image: url(/img/Search3.svg);
+	background-image: url(../img/Search3.svg);
 } 
 /* main */
 /* Big Slider */
@@ -232,13 +232,13 @@ p {
 	background-position: bottom;
 }
 .swiper-slide1 {
-	background-image: url(/img/low-angle-photo-of-balconies-1920.jpg);
+	background-image: url(../img/low-angle-photo-of-balconies-1920.jpg);
 }
 .swiper-slide2 {
-	background-image: url(/img/brown-and-blue-glass-building_1920.jpg);	
+	background-image: url(../img/brown-and-blue-glass-building_1920.jpg);	
 }
 .swiper-slide3 {
-	background-image: url(/img/apartment-apartment-building-architecture-building_1920.jpg);
+	background-image: url(../img/apartment-apartment-building-architecture-building_1920.jpg);
 }
 .swiper-pagination {
 	left: 843px;
@@ -330,7 +330,7 @@ p {
 	margin-right: 30px;
 	width: 870px;
 	height: 622px;
-	background-image: url(/img/Rectangle_1920.png);
+	background-image: url(../img/Rectangle_1920.png);
 	transition: 0.5s;
 }
 .principles-discription-btn {
@@ -391,14 +391,14 @@ p {
 	background-size: contain;
 }
 .consultation-img {
-	background-image: url(/img/Group25.svg);
+	background-image: url(../img/Group25.svg);
 	width: 178px;
 	height: 137px;
 	margin: 71px 57px 85px 63px;
 
 }
 .aspiration-img {
-	background-image: url(/img/Group24.svg);
+	background-image: url(../img/Group24.svg);
 	width: 178px;
 	height: 153px;
 	margin: 55px 57px 85px 63px;
@@ -530,17 +530,17 @@ p {
 	width: 870px;
 	height: 460px;
 	letter-spacing: 0;
-	background-image: url(/img/Rectangle_1920.jpg);
+	background-image: url(../img/Rectangle_1920.jpg);
 	background-repeat: no-repeat;
 }
 .hww-box-img-tab-two {
-	background-image: url(/img/Rectangle_1920_tab_two.jpg);
+	background-image: url(../img/Rectangle_1920_tab_two.jpg);
 } 
 .hww-box-img-tab-three {
-	background-image: url(/img/Rectangle_1920_tab_three.jpg);
+	background-image: url(../img/Rectangle_1920_tab_three.jpg);
 } 
 .hww-box-img-tab-four {
-	background-image: url(/img/Rectangle_1920_tab_four.jpg);
+	background-image: url(../img/Rectangle_1920_tab_four.jpg);
 } 
 .hww-box-discription_768px {
 	display: none;
@@ -622,13 +622,13 @@ p {
 	height: 50px;
 	border-radius: 50%;
 	background-color: var(--color10);
-	background-image: url(/img/Rectangle12.png);
+	background-image: url(../img/Rectangle12.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	transition: 0.5s;
 } 
 .question-box:hover .question-item-icon {
-	background-image: url(/img/Rectangle_12_White.png);
+	background-image: url(../img/Rectangle_12_White.png);
 	background-color: var(--color4);
 }
 #accordion .ui-corner-bottom,  
@@ -644,7 +644,7 @@ p {
 }
 #accordion .ui-accordion-header-active .question-box:hover .question-item-icon {
 	background-color: var(--color10);
-	background-image: url(/img/Rectangle12.png);
+	background-image: url(../img/Rectangle12.png);
 }
 #accordion .ui-accordion-header-active .question-box:hover .question-item-text{
 	color: var(--color3);
@@ -823,7 +823,7 @@ label:before {
 	}
 
 	.header-link-burger-active {
-		background-image: url(/img/Burger_active.svg);
+		background-image: url(../img/Burger_active.svg);
 	}
 	
 	 .nav-menu, .nav-menu-active {
@@ -860,7 +860,7 @@ label:before {
 		width: 24.17px;
 		height: 25.62px;
 		margin: 40px 0 34px 0;
-		background-image: url(/img/Search_1024.svg)
+		background-image: url(../img/Search_1024.svg)
  	}
 	/* Big Slider */
 	.big-slider {
@@ -874,13 +874,13 @@ label:before {
 		height: 668px;
 	}
 	.swiper-slide1 {
-		background-image: url(/img/low-angle-photo-of-balconies-1024.jpg);
+		background-image: url(../img/low-angle-photo-of-balconies-1024.jpg);
 	}
 	.swiper-slide2 {
-		background-image: url(/img/brown-and-blue-glass-building_1024.jpg);	
+		background-image: url(../img/brown-and-blue-glass-building_1024.jpg);	
 	}
 	.swiper-slide3 {
-		background-image: url(/img/apartment-apartment-building-architecture-building_1024.jpg);
+		background-image: url(../img/apartment-apartment-building-architecture-building_1024.jpg);
 	}
 	.swiper-pagination {
 		left: 420px;
@@ -925,7 +925,7 @@ label:before {
 		width: 924px;
 		height: 640px;
 		margin: 0 0 50px;
-		background-image: url(/img/Rectangle_1024.jpg);
+		background-image: url(../img/Rectangle_1024.jpg);
 	} 
 	.principles-discription-btn {
 		width: 924px;
@@ -978,16 +978,16 @@ label:before {
 	.hww-box-img {
 		width: 437px;
 		height: 689px;
-		background-image: url(/img/Rectangle_1024_2.jpg);
+		background-image: url(../img/Rectangle_1024_2.jpg);
 	}
 	.hww-box-img-tab-two {
-		background-image: url(/img/Rectangle_1024_tab_two.jpg);
+		background-image: url(../img/Rectangle_1024_tab_two.jpg);
 	} 
 	.hww-box-img-tab-three {
-		background-image: url(/img/Rectangle_1024_tab_three.jpg);
+		background-image: url(../img/Rectangle_1024_tab_three.jpg);
 	} 
 	.hww-box-img-tab-four {
-		background-image: url(/img/Rectangle_1024_tab_four.jpg);
+		background-image: url(../img/Rectangle_1024_tab_four.jpg);
 	} 
 	/* Asked Questions */
 	.asked-questions {
@@ -1087,13 +1087,13 @@ label:before {
 		height: 662px;
 	}
 	.swiper-slide1 {
-		background-image: url(/img/low-angle-photo-of-balconies-768.jpg);
+		background-image: url(../img/low-angle-photo-of-balconies-768.jpg);
 	}
 	.swiper-slide2 {
-		background-image: url(/img/brown-and-blue-glass-building_768.jpg);	
+		background-image: url(../img/brown-and-blue-glass-building_768.jpg);	
 	}
 	.swiper-slide3 {
-		background-image: url(/img/apartment-apartment-building-architecture-building_768.jpg);
+		background-image: url(../img/apartment-apartment-building-architecture-building_768.jpg);
 	}
 	.swiper-pagination {
 		left: 292px;
@@ -1133,7 +1133,7 @@ label:before {
 		width: 100%;
 		height: 650px;
 		margin-bottom: 32px;
-		background-image: url(/img/Rectangle_768.jpg);
+		background-image: url(../img/Rectangle_768.jpg);
 	} 
 	.principles-discription-btn {
 		width: 100%;
@@ -1165,13 +1165,13 @@ label:before {
 		width: 114px;
 		height: 99px;
 		margin: 68px 16px 68px 40px;
-		background-image: url(/img/Group25_768px.svg);
+		background-image: url(../img/Group25_768px.svg);
 	}
 	.aspiration-img {
 		width: 114px;
 		height: 99px;
 		margin: 68px 16px 68px 40px;
-		background-image: url(/img/Group24_768px.svg);
+		background-image: url(../img/Group24_768px.svg);
 	}	
 	.consultation-box, 
 	.aspiration-box {
@@ -1204,16 +1204,16 @@ label:before {
 		width: 668px;
 		height: 284px;
 		margin: 0 0 38px 0;
-		background-image: url(/img/Rectangle_768_2.jpg);
+		background-image: url(../img/Rectangle_768_2.jpg);
 	}
 	.hww-box-img-tab-two {
-		background-image: url(/img/Rectangle_1920_tab_two.jpg);
+		background-image: url(../img/Rectangle_1920_tab_two.jpg);
 	} 
 	.hww-box-img-tab-three {
-		background-image: url(/img/Rectangle_1920_tab_three.jpg);
+		background-image: url(../img/Rectangle_1920_tab_three.jpg);
 	} 
 	.hww-box-img-tab-four {
-		background-image: url(/img/Rectangle_1920_tab_four.jpg);
+		background-image: url(../img/Rectangle_1920_tab_four.jpg);
 	} 
 	.hww-box-discription_768px {
 		display: block;
@@ -1327,11 +1327,11 @@ label:before {
 		top: 33%;
 		width: 30px;
 		height: 23px;
-		background-image: url(/img/Burger_320.svg);
+		background-image: url(../img/Burger_320.svg);
 		background-repeat: no-repeat;
 	}
 	.header-link-burger-active {
-		background-image: url(/img/Burger_active.svg);
+		background-image: url(../img/Burger_active.svg);
 	}
 	.nav-burger-menu {
 		margin: 5px 0 0 70px;
@@ -1367,13 +1367,13 @@ label:before {
 		height: 308px;
 	}
 	.swiper-slide1 {
-		background-image: url(/img/low-angle-photo-of-balconie-320.jpg);
+		background-image: url(../img/low-angle-photo-of-balconie-320.jpg);
 	}
 	.swiper-slide2 {
-		background-image: url(/img/brown-and-blue-glass-building_320.jpg);	
+		background-image: url(../img/brown-and-blue-glass-building_320.jpg);	
 	}
 	.swiper-slide3 {
-		background-image: url(/img/apartment-apartment-building-architecture-building_320.jpg);
+		background-image: url(../img/apartment-apartment-building-architecture-building_320.jpg);
 	}
 	.swiper-pagination {
 		left: 110px;
@@ -1434,7 +1434,7 @@ label:before {
 		width: 100%;
 		height: 200px;
 		margin-bottom: 8px;
-		background-image: url(/img/Rectangle_320.jpg);
+		background-image: url(../img/Rectangle_320.jpg);
 		background-repeat: no-repeat;
 		background-position: top;
 	} 
@@ -1485,7 +1485,7 @@ label:before {
 		width: 64px;
 		height: 49px;
 		margin: 0 0 12px 0;
-		background-image: url(/img/Group25_320px.svg);
+		background-image: url(../img/Group25_320px.svg);
 
 	}
 	.aspiration-img {
@@ -1493,7 +1493,7 @@ label:before {
 		width: 64px;
 		height: 49px;
 		margin: 0 0 12px 0;
-		background-image: url(/img/Group24_320px.svg);
+		background-image: url(../img/Group24_320px.svg);
 
 	}	
 	.consultation-box, 
@@ -1542,16 +1542,16 @@ label:before {
 		width: 290px;
 		height: 160px;
 		margin:0 0 16px 0;
-		background-image: url(/img/Rectangle_320_2.jpg);
+		background-image: url(../img/Rectangle_320_2.jpg);
 	}
 	.hww-box-img-tab-two {
-		background-image: url(/img/Rectangle_320_tab_two.jpg);
+		background-image: url(../img/Rectangle_320_tab_two.jpg);
 	} 
 	.hww-box-img-tab-three {
-		background-image: url(/img/Rectangle_320_tab_three.jpg);
+		background-image: url(../img/Rectangle_320_tab_three.jpg);
 	} 
 	.hww-box-img-tab-four {
-		background-image: url(/img/Rectangle_320_tab_four.jpg);
+		background-image: url(../img/Rectangle_320_tab_four.jpg);
 	} 
 	.hww-box-discription_768px {
 		display: block;
@@ -1616,7 +1616,7 @@ label:before {
 		width: 30px;
 		height: 30px;
 		margin: 39px 0;
-		background-image: url(/img/Rectangle\ 12_320.svg);
+		background-image: url(../img/Rectangle\ 12_320.svg);
 	}
 	.q-i-i-320 {
 		margin: 51px 0;
