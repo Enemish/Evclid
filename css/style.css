@@ -215,6 +215,7 @@ p {
 	margin-bottom: 100px;
 }
 .container-slider {
+	overflow: hidden;
 	position: relative;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -867,7 +868,6 @@ label:before {
 		margin-bottom: 60px;
 	}
 	.container-slider {
-		overflow: hidden;
 		height: 668px;
 	}
 	.swiper-container {
